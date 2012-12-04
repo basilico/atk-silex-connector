@@ -1,0 +1,7 @@
+{
+    "name": "basilico/atk-silex-connector",
+    "require": {
+       "php": ">=5.2.0"
+    },
+    "target-dir": "basilico"
+}
