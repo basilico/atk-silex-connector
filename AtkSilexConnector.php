@@ -2,23 +2,25 @@
 
 namespace Basilico\Atk;
 
-require __FILE__.'/../../web/backoffice/atk.inc';
-
 /**
- * 
+ * AtkSilexConnector
+ *
+ * @author Dharma <dharma@basili.co>
  */
 class AtkSilexConnector
 {
   /**
-   *
+   * Last used node
    */  
   private $lastNode = null;
   
   /**
-   *
+   * Load atk-framework libraries
    */  
   public function __construct() {
-
+    $config_atkroot = realpath(dirname(__FILE__).'/../../../../../web/backoffice').'/';
+    $GLOBALS['config_atkroot'] = $config_atkroot;
+    require_once $config_atkroot . "atk.inc";
   }
   
   /**
@@ -39,16 +41,25 @@ class AtkSilexConnector
   }
 
   /**
-   * Stable API
+   * (stable API)
    */  
   public function getRows($query) {
     return $this->getDb()->getrows($query);
   }
   
+
+  public function setLastNode($node) {
+    $this->lastNode = $node;
+  }
+
+  
+  /**
+   * Proxy methods
+   */
   public function query($query) {
     return $this->getDb()->query($query);
   }
-  
+
   public function getDb() {
     if ($this->lastNode) {
       $db = $this->getNode($this->lastNode)->getDb();
@@ -58,16 +69,8 @@ class AtkSilexConnector
     
     return $db;
   }
-  
-  /**
-   * Atk method
-   */
+
   public function getNode($node) {
     return getNode($node);
-  }
-
-  public function setLastNode($node) {
-    $this->lastNode = $node;
-  }
-    
+  }    
 }
