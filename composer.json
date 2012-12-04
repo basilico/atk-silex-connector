@@ -6,7 +6,7 @@
             "email": "dharma@basili.co",
             "homepage": "http://www.basili.co",
             "role": "Developer"
-        },
+        }
     ],
     "require": {
        "php": ">=5.2.0"
