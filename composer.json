@@ -3,5 +3,8 @@
     "require": {
        "php": ">=5.2.0"
     },
-    "target-dir": "basilico"
+    "autoload": {
+        "psr-0": {"Basilico": "."}
+    }
+
 }
