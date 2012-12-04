@@ -7,7 +7,7 @@ require __FILE__.'/../../web/backoffice/atk.inc';
 /**
  * 
  */
-class Atk_SilexConnector
+class AtkSilexConnector
 {
   /**
    *

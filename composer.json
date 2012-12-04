@@ -1,10 +1,18 @@
 {
     "name": "basilico/atk-silex-connector",
+    "authors": [
+        {
+            "name": "Dharma Ferrari",
+            "email": "dharma@basili.co",
+            "homepage": "http://www.basili.co",
+            "role": "Developer"
+        },
+    ],
     "require": {
        "php": ">=5.2.0"
     },
     "autoload": {
-        "psr-0": {"Basilico": "."}
-    }
-
+        "psr-0": {"Basilico\\Atk": ""}
+    },
+    "target-dir": "Basilico/Atk"
 }
